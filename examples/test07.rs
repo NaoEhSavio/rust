@@ -18,7 +18,14 @@ fn main() {
 
         println!("voce Digitou: {}", dig);
 
-        let dig: u64 = dig.trim().parse().expect("Por favor digiti um número");
+        // let dig: u64 = dig.trim().parse().expect("Por favor digiti um número");
+        let dig: u64 = match dig.trim().parse() {
+            Err(_) => {
+                println!("Por favor digiti um número");
+                continue;
+            }
+            Ok(numero) => numero,
+        };
 
         match dig.cmp(&numero) {
             Ordering::Less => println!("É Menor"),
