@@ -3,7 +3,7 @@ enum Message {
 	Move { x: i32, y: i32},
 	Write(String),
 	ChangeColor(u8,u8,u8),
-	//Paste,
+	Paste,
 }
 fn main(){
 	let move_msg = Message::Move { x: (15), y: (0) };
@@ -14,6 +14,8 @@ fn main(){
 	handle_message(write_msg);
 	let quit_msg = Message::Quit;
 	handle_message(quit_msg);
+	// let paste_msg = Message::Paste;
+	// handle_message(paste_msg);
 }
 
 fn handle_message(message: Message) {
@@ -24,7 +26,9 @@ fn handle_message(message: Message) {
 		Write(texto) => println!(">>> {}", texto),
 		ChangeColor(red, green, blue) => {
 			println!("Alterar cor para RGB:({},{},{})", red,green,blue)
-		}
+		},
+		// Paste => println!(" Colando ..."),
+		_ => {}// Paste => {}
 	};
 }
 
