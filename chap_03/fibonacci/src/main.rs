@@ -17,18 +17,18 @@ fn main() {
             }
         };
         
-    let fib = fibonacci(number);
+    let fib = Fibonacci(number);
 
     println!("Número de Fibonacci é {}",fib);
     break;
     }
 }
-fn fibonacci (n: u64) -> u64 {
+fn Fibonacci (n: u64) -> u64 {
     if n == 1 {
         0
     } else if n == 2 {
         1
     } else {
-        fibnocci(n - 1) + fibnocci(n - 2)
+        Fibonacci(n - 1) + Fibonacci(n - 2)
     }
 }

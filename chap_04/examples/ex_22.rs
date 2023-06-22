@@ -1,0 +1,1 @@
+fn primeira_palavra(s: &String) -> ?
